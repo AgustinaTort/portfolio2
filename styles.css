@@ -1,0 +1,217 @@
+/* General */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Acme", sans-serif;
+    font-size: 1.1em;
+    line-height: 1.8;
+    padding-top: 140px; /* Espacio extra para que el contenido no quede cubierto por el header */
+    background-color: #f0f0f0; /* Fondo suave para el cuerpo */
+    color: #333; /* Color de texto */
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1ABC9C; /* Tono más suave */
+    padding: 1.5em;
+    position: fixed; /* Fija el encabezado en la parte superior */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 80px;
+}
+
+header .logo a {
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/* Menú hamburguesa */
+#check {
+    display: none;
+}
+
+.checkbtn {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+nav ul {
+    display: flex;
+    gap: 1.5em;
+    margin: 0;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 1em;
+    padding: 0.5em 1em;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Estilos del menú desplegable */
+#check:checked ~ .menu {
+    display: flex;
+    left: 0;
+}
+
+.menu {
+    display: flex;
+    gap: 1.5em;
+}
+
+.menu li {
+    display: block;
+}
+
+/* Ajustes al body y el espacio para el encabezado */
+body {
+    padding-top: 140px;
+}
+
+/* Main */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    text-align: center;
+    padding: 3em 2em; /* Se añadió más padding */
+}
+
+/* Sección de título, párrafo e imágenes alineados */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3em; /* Espacio entre los elementos */
+    flex-wrap: wrap; /* Para que se acomoden en dispositivos pequeños */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+}
+
+h2 {
+    font-size: 3em; /* Aumentamos el tamaño */
+    margin: 0;
+    color: #333;
+    flex: 2 1 40%; /* Permite que el título ocupe más espacio */
+    padding: 0 1em; /* Un pequeño relleno lateral */
+}
+
+p {
+    font-size: 1.2em; /* Aumentamos el tamaño */
+    line-height: 1.8;
+    max-width: 650px; /* Aumentamos el tamaño máximo */
+    margin: 0;
+    color: #555;
+    flex: 3 1 50%; /* Hace que el párrafo ocupe más espacio */
+    padding: 0 1em; /* Un pequeño relleno lateral */
+}
+
+/* Sección de imágenes */
+.imagen-section {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    margin-top: 40px;
+    flex-wrap: wrap; /* Para que las imágenes se acomoden bien en pantallas pequeñas */
+    width: 100%;
+}
+
+.imagen-principal {
+    width: 100%;
+    max-width: 600px; /* Aumentamos el tamaño máximo */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Carrusel */
+.carrusel {
+    margin-top: 40px;
+}
+
+.imagen-carrusel {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .checkbtn {
+        display: block;
+    }
+
+    /* Ajuste del menú hamburguesa */
+    nav ul {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: #1ABC9C;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease-in-out;
+        padding: 3em 0;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    #check:checked ~ nav ul {
+        left: 0;
+    }
+
+    /* Para pantallas pequeñas, los elementos se colocan en columnas */
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h2, p {
+        text-align: center;
+        flex: 1 1 100%; /* Ocupa toda la línea */
+        margin: 20px 0; /* Un poco de margen entre los elementos */
+    }
+
+    .imagen-section {
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases Online - Todos los Niveles</title>
+    <link rel="stylesheet" href="styles5.css">
+
+    <!-- Enlace a Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Tus estilos CSS aquí */
+        /* ... */
+        
+        /* Estilos para el botón flotante del carrito */
+        #open-cart {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ff7e5f;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 110;
+        }
+
+        #open-cart:hover {
+            background-color: #feb47b;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Clases Online para Todos los Niveles</h1>
+    <h2>Selecciona el nivel que te interesa</h2>
+
+    <div class="level-container">
+        <!-- Nivel Básico -->
+        <div class="level-card">
+            <h3>Básico</h3>
+            <p>Ideal para quienes están comenzando desde cero. Aprende lo esencial paso a paso.</p>
+            <a href="#basic" class="btn-level">Ver Clases</a>
+        </div>
+
+        <!-- Nivel Intermedio -->
+        <div class="level-card">
+            <h3>Intermedio</h3>
+            <p>Para quienes ya tienen algunos conocimientos y quieren mejorar su fluidez.</p>
+            <a href="#intermediate" class="btn-level">Ver Clases</a>
+        </div>
+
+        <!-- Nivel Avanzado -->
+        <div class="level-card">
+            <h3>Avanzado</h3>
+            <p>Para quienes buscan perfeccionar su habilidad y alcanzar un nivel experto.</p>
+            <a href="#advanced" class="btn-level">Ver Clases</a>
+        </div>
+    </div>
+
+    <!-- Botón Volver -->
+    <a href="index.html" class="btn-back">Volver</a>
+
+    <!-- Botón para abrir el carrito -->
+    <button id="open-cart" onclick="toggleCart()">🛒</button>
+
+    <!-- El carrito de compras (que inicialmente estará cerrado) -->
+    <div id="cart" class="closed">
+        <h3>Carrito</h3>
+        <ul id="cart-items">
+            <!-- Aquí aparecerán los productos del carrito -->
+        </ul>
+        <div class="total">Total: $0.00</div>
+        <button class="btn-checkout">Pagar</button>
+        <button class="close-cart" onclick="toggleCart()">X</button>
+    </div>
+
+    <script>
+        // Función para abrir y cerrar el carrito
+        function toggleCart() {
+            const cart = document.getElementById('cart');
+            cart.classList.toggle('open');
+            cart.classList.toggle('closed');
+        }
+    </script>
+</body>
+</html>
+
+

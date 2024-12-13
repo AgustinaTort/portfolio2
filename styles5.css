@@ -1,0 +1,335 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Fondo de gradiente más suave */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Título principal */
+h1 {
+    font-size: 3.5rem;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Subtítulo */
+h2 {
+    font-size: 2.2rem;
+    color: #fff;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Contenedor de las tarjetas */
+.level-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+/* Tarjetas de nivel */
+.level-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 12px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de elevación y sombra al pasar el ratón sobre las tarjetas */
+.level-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Títulos dentro de las tarjetas */
+.level-card h3 {
+    font-size: 2rem;
+    color: #ff7e5f;
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Descripción de las clases */
+.level-card p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Botón dentro de las tarjetas */
+.btn-level {
+    text-decoration: none;
+    background-color: #ff7e5f;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+/* Efecto hover sobre el botón */
+.btn-level:hover {
+    background-color: #feb47b;
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo de la sombra en las tarjetas */
+.level-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.15); /* Sombra sutil sobre la tarjeta */
+    border-radius: 12px;
+    z-index: -1;
+}
+
+/* Pie de página */
+footer {
+    margin-top: 50px;
+    color: #fff;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+footer p {
+    font-size: 1rem;
+    color: #fff;
+    margin-top: 10px;
+}
+.btn-back:hover {
+    background-color: #218838; /* Verde más oscuro */
+}
+/* Estilos del carrito */
+#cart {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    width: 280px;
+    max-height: 400px;
+    overflow-y: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+#cart.closed {
+    transform: translateX(100%);
+}
+
+#cart.open {
+    transform: translateX(0);
+}
+
+#cart h3 {
+    font-size: 1.8rem;
+    color: #ff7e5f;
+    margin-bottom: 15px;
+}
+
+#cart ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#cart ul li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#cart ul li span {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+#cart .total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#cart .close-cart {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff7e5f;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#cart .btn-checkout {
+    margin-top: 20px;
+    background-color: #ff7e5f;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#cart .btn-checkout:hover {
+    background-color: #feb47b;
+}
+#open-cart {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff7e5f;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 110;
+}
+
+#open-cart:hover {
+    background-color: #feb47b;
+}
+/* Estilos del carrito */
+#cart {
+    position: fixed;
+    top: 70px;  /* Ajusta para que no cubra el encabezado */
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    width: 220px;  /* Reduce aún más el ancho del carrito */
+    max-height: 300px;  /* Limita la altura del carrito */
+    overflow-y: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);  /* Menos sombra para mayor ligereza */
+    z-index: 100;
+    text-align: left;  /* Alinea los elementos a la izquierda para ahorrar espacio */
+    transition: transform 0.3s ease-in-out;
+}
+
+#cart.closed {
+    transform: translateX(100%);
+}
+
+#cart.open {
+    transform: translateX(0);
+}
+
+#cart h3 {
+    font-size: 1.4rem;  /* Reduce aún más el tamaño del título */
+    color: #ff7e5f;
+    margin-bottom: 10px;
+}
+
+#cart ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#cart ul li {
+    margin: 6px 0;
+    padding: 6px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;  /* Reduce el tamaño de la fuente */
+}
+
+#cart ul li span {
+    font-size: 0.9rem;  /* Reduce el tamaño de la fuente para los precios */
+    color: #555;
+}
+
+#cart .total {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 10px;  /* Reduce el espacio entre la lista y el total */
+}
+
+#cart .close-cart {
+    position: absolute;
+    top: 5px;  /* Reduce el espacio en la parte superior */
+    right: 5px;
+    background-color: #ff7e5f;
+    color: white;
+    padding: 6px 12px;  /* Ajusta el tamaño del botón */
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+#cart .btn-checkout {
+    margin-top: 10px;
+    background-color: #ff7e5f;
+    color: white;
+    padding: 8px 16px;  /* Ajusta el tamaño del botón de pago */
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#cart .btn-checkout:hover {
+    background-color: #feb47b;
+}
+
+#open-cart {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff7e5f;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 110;
+}
+
+#open-cart:hover {
+    background-color: #feb47b;
+}
+

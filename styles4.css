@@ -1,0 +1,101 @@
+/* Estilos básicos para la página */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo para el body */
+body {
+    font-family: 'Poppins', sans-serif; /* Usamos una fuente más moderna */
+    background: url('https://example.com/your-image.jpg') no-repeat center center fixed; /* Fondo con imagen */
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Contenedor principal */
+.container {
+    position: relative;
+    text-align: center;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Sombra más suave */
+    max-width: 450px;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto cuando el contenedor es hover */
+.container:hover {
+    transform: translateY(-10px); /* Efecto de levantar el contenedor */
+}
+
+/* Estilo para el título */
+h1 {
+    font-size: 2.8rem; /* Aumentamos el tamaño */
+    color: #ff7e5f; /* Un color más cálido y vibrante */
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Estilo para los párrafos */
+p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Estilo para el botón */
+.btn-servicios {
+    text-decoration: none;
+    background-color: #ff7e5f; /* Color vibrante */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px; /* Bordes redondeados */
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block; /* Hace que el botón ocupe solo el tamaño necesario */
+}
+
+/* Efecto hover del botón */
+.btn-servicios:hover {
+    background-color: #feb47b; /* Cambio de color en hover */
+    transform: scale(1.1); /* Aumento de tamaño */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra suave en hover */
+}
+
+/* Estilo de imagen decorativa en el fondo (opcional) */
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://example.com/your-image.jpg'); /* Puedes poner una imagen aquí */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15; /* Baja opacidad para no restar legibilidad */
+    z-index: -1; /* Para que la imagen quede detrás del contenido */
+}
+.back-button button {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.back-button button:hover {
+    background-color: #45a049;
+}
